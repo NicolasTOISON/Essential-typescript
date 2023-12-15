@@ -1,0 +1,16 @@
+{
+  "name": "essential-typescript",
+  "version": "1.0.0",
+  "description": "Code Samples & Exercises from Essential TypeScript (Third Edition)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "run": "node dist/index.js"
+  },
+  "author": "Nicolas TOISON",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.0.2"
+  }
+}
