@@ -1,3 +1,4 @@
+// TodoItem class define the properties data type of a TodoItem object
 export class TodoItem {
   constructor(
     public id: number,
@@ -11,7 +12,7 @@ export class TodoItem {
 
   printDetails(): void {
     console.log(
-      `$(this.id)\t${this.task} ${this.isComplete ? "\t(complete)" : ""}`
+      `${this.id}\t${this.task} ${this.isComplete ? "\t(complete)" : ""}`
     );
   }
 }
