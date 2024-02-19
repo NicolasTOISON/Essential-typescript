@@ -1,6 +1,7 @@
 import { TodoItem } from "./todoItem.js";
 import { TodoCollection } from "./todoCollection.js";
 import inquirer from "inquirer";
+import { JsonTodoCollection } from "./jsonTodoCollection.js";
 
 let todos: TodoItem[] = [
   new TodoItem(1, "Buy Flowers"),
@@ -9,7 +10,8 @@ let todos: TodoItem[] = [
   new TodoItem(4, "Call Joe", true),
 ];
 
-let collection: TodoCollection = new TodoCollection("Nicolas", todos);
+//let collection: TodoCollection = new TodoCollection("Nicolas", todos);
+let collection: TodoCollection = new JsonTodoCollection("Nicolas", todos);
 let showCompleted = true;
 
 function displayTodoList(): void {
@@ -59,7 +61,7 @@ function promptComplete(): void {
       })),
     })
     .then((answers) => {
-      let completedTasks = answers["complete"] as number [];
+      let completedTasks = answers["complete"] as number[];
       collection
         .getTodoItems(true)
         .forEach((item) =>

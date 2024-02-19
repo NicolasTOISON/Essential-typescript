@@ -8,7 +8,8 @@ type ItemCounts = {
 
 export class TodoCollection {
   private nextId: number = 1;
-  private itemMap = new Map<number, TodoItem>();
+  //Change in access control keyword to allow sub-class to access itemMap property containing TodoItem objects
+  protected itemMap = new Map<number, TodoItem>();
 
   constructor(public userName: string, public todoItems: TodoItem[] = []) {
     todoItems.forEach((item) => this.itemMap.set(item.id, item));
