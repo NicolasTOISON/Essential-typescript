@@ -1,5 +1,11 @@
 import { TodoItem } from "./todoItem";
 
+//Object litteral to describe an object shape, type keyword allow us to create a 'type alias' which is a convenient way to assign a name to a shape type (a specific combination of name and type)
+type ItemCounts = {
+  total: number;
+  incomplete: number;
+};
+
 export class TodoCollection {
   private nextId: number = 1;
   private itemMap = new Map<number, TodoItem>();
@@ -39,5 +45,12 @@ export class TodoCollection {
         this.itemMap.delete(item.id);
       }
     });
+  }
+
+  getItemCounts(): ItemCounts {
+    return {
+      total: this.itemMap.size,
+      incomplete: this.getTodoItems(false).length,
+    };
   }
 }
