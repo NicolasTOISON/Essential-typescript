@@ -1,4 +1,4 @@
-import { TodoItem } from "./todoItem";
+import { TodoItem } from "./todoItem.js";
 
 //Object litteral to describe an object shape, type keyword allow us to create a 'type alias' which is a convenient way to assign a name to a shape type (a specific combination of name and type)
 type ItemCounts = {
